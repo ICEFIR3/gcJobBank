@@ -38,6 +38,12 @@ GcJobBankApp.intent('welcome', conv => {
  
 });
 
+GcJobBankApp.intent('all jobs', (conv, params)=> {
+	 const province = conv.parameters['provinces'];
+	 const city = conv.parameters['geo-city'];
+	 conv.ask('HELLO WORLD ' + city + ' and ' + province);
+});
+
 GcJobBankApp.intent('newest jobs', conv => {
 	newItemNotification(conv);
 	readItems(conv);
